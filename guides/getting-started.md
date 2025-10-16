@@ -18,35 +18,35 @@ Ce guide vous aidera à cloner, compiler et exécuter tous mes projets 42.
     - **Linux** (Ubuntu, Debian, Rocky Linux)
     - **WSL2** pour Windows (limité pour les projets graphiques)</p>
 </div>
-  
+
   <div class="step">
   <h4>Outils de développement</h4>
-  <p>```bash
-    # macOS
+  ```bash
+# macOS
     xcode-select --install
-    
+
     # Linux (Debian/Ubuntu)
     sudo apt update
     sudo apt install build-essential git make
-    
+
     # Linux (Rocky/Fedora)
     sudo dnf groupinstall "Development Tools"
     sudo dnf install git make
-    ```</p>
+```
 </div>
-  
+
   <div class="step">
   <h4>Vérification</h4>
-  <p>```bash
-    # Vérifier GCC
+  ```bash
+# Vérifier GCC
     gcc --version
-    
+
     # Vérifier Make
     make --version
-    
+
     # Vérifier Git
     git --version
-    ```</p>
+```
 </div>
 </div>
 
@@ -66,30 +66,21 @@ project/
 ## Cloner un projet
 
 <div class="tabs-container">
-<div class="tab-buttons">
+  <div class="tab-buttons"></div>
   <div id="méthode-simple" class="tab-content">
 ```bash
     # Cloner via HTTPS
     git clone https://github.com/NikoStano/libft.git
     cd libft
     ```
-</div>
-  
+  </div>
   <div id="méthode-ssh" class="tab-content">
 ```bash
     # Cloner via SSH (si configuré)
     git clone git@github.com:NikoStano/libft.git
     cd libft
     ```
-</div>
-  
-  <div id="avec-submodules" class="tab-content">
-```bash
-    # Si le projet a des submodules
-    git clone --recurse-submodules https://github.com/NikoStano/FdF.git
-    cd FdF
-    ```
-</div>
+  </div>
 </div>
 </div>
 
@@ -121,24 +112,24 @@ make bonus
 <div class="steps-container">
   <div class="step">
   <h4>Cloner</h4>
-  <p>```bash
-    git clone https://github.com/NikoStano/libft.git
+  ```bash
+git clone https://github.com/NikoStano/libft.git
     cd libft
-    ```</p>
+```
 </div>
-  
+
   <div class="step">
   <h4>Compiler</h4>
-  <p>```bash
-    make
+  ```bash
+make
     # Crée libft.a
-    ```</p>
+```
 </div>
-  
+
   <div class="step">
   <h4>Tester</h4>
-  <p>```bash
-    # Créer un fichier de test
+  ```bash
+# Créer un fichier de test
     cat > test.c << 'EOF'
     #include "libft.h"
     #include <stdio.h>
@@ -151,13 +142,13 @@ make bonus
         return (0);
     }
     EOF
-    
+
     # Compiler avec libft
     gcc test.c -L. -lft -I. -o test
-    
+
     # Exécuter
     ./test
-    ```</p>
+```
 </div>
 </div>
 
@@ -166,39 +157,39 @@ make bonus
 <div class="steps-container">
   <div class="step">
   <h4>Cloner</h4>
-  <p>```bash
-    git clone https://github.com/NikoStano/FdF.git
+  ```bash
+git clone https://github.com/NikoStano/FdF.git
     cd FdF
-    ```</p>
+```
 </div>
-  
+
   <div class="step">
   <h4>Installer MiniLibX (si nécessaire)</h4>
-  <p>```bash
-    # macOS - déjà inclus
-    
+  ```bash
+# macOS - déjà inclus
+
     # Linux
     sudo apt install libx11-dev libxext-dev libbsd-dev
     git clone https://github.com/42Paris/minilibx-linux.git
     cd minilibx-linux
     make
     cd ..
-    ```</p>
+```
 </div>
-  
+
   <div class="step">
   <h4>Compiler</h4>
-  <p>```bash
-    make
-    ```</p>
+  ```bash
+make
+```
 </div>
-  
+
   <div class="step">
   <h4>Exécuter</h4>
-  <p>```bash
-    # Avec une carte de test
+  ```bash
+# Avec une carte de test
     ./fdf maps/42.fdf
-    ```</p>
+```
 </div>
 </div>
 
@@ -207,39 +198,39 @@ make bonus
 <div class="steps-container">
   <div class="step">
   <h4>Cloner</h4>
-  <p>```bash
-    git clone https://github.com/NikoStano/push_swap.git
+  ```bash
+git clone https://github.com/NikoStano/push_swap.git
     cd push_swap
-    ```</p>
+```
 </div>
-  
+
   <div class="step">
   <h4>Compiler</h4>
-  <p>```bash
-    make
+  ```bash
+make
     # Crée l'exécutable push_swap
-    
+
     # Pour le bonus (checker)
     make bonus
-    ```</p>
+```
 </div>
-  
+
   <div class="step">
   <h4>Tester</h4>
-  <p>```bash
-    # Trier 3 nombres
+  ```bash
+# Trier 3 nombres
     ./push_swap 2 1 3
-    
+
     # Trier 5 nombres
     ./push_swap 5 3 1 4 2
-    
+
     # Trier 100 nombres aléatoires
     ARG=$(seq 1 100 | shuf | tr '\n' ' ')
     ./push_swap $ARG | wc -l
-    
+
     # Vérifier avec checker
     ./push_swap $ARG | ./checker $ARG
-    ```</p>
+```
 </div>
 </div>
 
@@ -248,30 +239,30 @@ make bonus
 <div class="steps-container">
   <div class="step">
   <h4>Cloner</h4>
-  <p>```bash
-    git clone https://github.com/NikoStano/minitalk.git
+  ```bash
+git clone https://github.com/NikoStano/minitalk.git
     cd minitalk
-    ```</p>
+```
 </div>
-  
+
   <div class="step">
   <h4>Compiler</h4>
-  <p>```bash
-    make
+  ```bash
+make
     # Crée server et client
-    ```</p>
+```
 </div>
-  
+
   <div class="step">
   <h4>Utiliser</h4>
-  <p>```bash
-    # Terminal 1 : Lancer le serveur
+  ```bash
+# Terminal 1 : Lancer le serveur
     ./server
     # Note le PID affiché, par exemple: 12345
-    
+
     # Terminal 2 : Envoyer un message
     ./client 12345 "Hello 42!"
-    ```</p>
+```
 </div>
 </div>
 
@@ -280,57 +271,56 @@ make bonus
 <details>
 <summary>Erreur: command not found</summary>
 
-<Accordion title="Erreur: command not found">
-    **Problème** : `make: command not found`
-    
+**Problème** : `make: command not found`
+
     **Solution** :
     ```bash
     # macOS
     xcode-select --install
-    
+
     # Linux
     sudo apt install make
     ```
 </details>
-  
+
   <details>
 <summary>Erreur: No rule to make target</summary>
 
 **Problème** : `make: *** No rule to make target`
-    
+
     **Solution** :
     ```bash
     # Vérifier que vous êtes dans le bon dossier
     ls Makefile
-    
+
     # Nettoyer et recompiler
     make fclean
     make
     ```
 </details>
-  
+
   <details>
 <summary>Erreur de compilation avec libft</summary>
 
 **Problème** : `libft.h: No such file or directory`
-    
+
     **Solution** :
     ```bash
     # Compiler libft d'abord
     cd libft
     make
     cd ..
-    
+
     # Puis recompiler le projet
     make
     ```
 </details>
-  
+
   <details>
 <summary>Erreur MiniLibX (macOS)</summary>
 
 **Problème** : `mlx.h: No such file or directory`
-    
+
     **Solution** :
     ```bash
     # Installer depuis le repo officiel
@@ -338,43 +328,42 @@ make bonus
     cd mlx
     make
     cd ..
-    
+
     # Ajuster le Makefile si nécessaire
     ```
 </details>
-  
+
   <details>
 <summary>Erreur MiniLibX (Linux)</summary>
 
 **Problème** : Linking errors avec MLX
-    
+
     **Solution** :
     ```bash
     # Installer les dépendances
     sudo apt install libx11-dev libxext-dev libbsd-dev
-    
+
     # Cloner et compiler minilibx
     git clone https://github.com/42Paris/minilibx-linux.git
     cd minilibx-linux
     make
     ```
 </details>
-  
+
   <details>
 <summary>Permission denied</summary>
 
 **Problème** : `./program: Permission denied`
-    
+
     **Solution** :
     ```bash
     # Donner les droits d'exécution
     chmod +x program
-    
+
     # Ou recompiler
     make re
     ```
 </details>
-
 
 ## Tests et validation
 
@@ -443,39 +432,39 @@ make
     - Identifier les fonctions autorisées
     - Comprendre les contraintes</p>
 </div>
-  
+
   <div class="step">
   <h4>Planifier</h4>
   <p>- Dessiner l'architecture du projet
     - Lister les fonctions à créer
     - Définir les structures de données</p>
 </div>
-  
+
   <div class="step">
   <h4>Coder</h4>
   <p>- Commencer par les fonctions simples
     - Tester chaque fonction individuellement
     - Commit régulièrement
-    
+
     ```bash
     git add file.c
     git commit -m "Add: ft_strlen function"
     ```</p>
 </div>
-  
+
   <div class="step">
   <h4>Tester</h4>
   <p>- Compiler souvent
     - Utiliser les testeurs
     - Vérifier avec valgrind
-    
+
     ```bash
     make re
     valgrind ./program test
     norminette
     ```</p>
 </div>
-  
+
   <div class="step">
   <h4>Optimiser</h4>
   <p>- Refactoriser le code
