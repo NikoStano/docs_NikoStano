@@ -1,0 +1,96 @@
+# Configuration du site
+title: "NikoStano - 42 Paris"
+description: "Documentation des projets de nistanoj @ 42 Paris"
+baseurl: ""
+url: "https://nikostano.github.io"
+
+# Thème
+theme: just-the-docs
+color_scheme: dark
+
+# Logo et favicon
+logo: "/assets/images/logo.png"
+favicon_ico: "/assets/images/favicon.png"
+
+# Configuration du thème Just the Docs
+search_enabled: true
+search:
+  heading_level: 2
+  previews: 3
+  preview_words_before: 5
+  preview_words_after: 10
+  tokenizer_separator: /[\s/]+/
+  rel_url: true
+  button: false
+
+# Navigation
+nav_sort: case_insensitive
+nav_external_links:
+  - title: GitHub
+    url: https://github.com/NikoStano
+    hide_icon: false
+  - title: 42 Profile
+    url: https://profile.intra.42.fr/users/nistanoj
+    hide_icon: false
+
+# Footer
+footer_content: "Copyright &copy; 2024 NikoStano. Tous droits réservés."
+
+# Liens de bas de page
+gh_edit_link: true
+gh_edit_link_text: "Modifier cette page sur GitHub"
+gh_edit_repository: "https://github.com/NikoStano/nikostano.github.io"
+gh_edit_branch: "main"
+
+# Paramètres généraux
+permalink: pretty
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-relative-links
+
+# Markdown
+markdown: kramdown
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+
+# Collections (optionnel)
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+  guides:
+    output: true
+    permalink: /guides/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: "projects"
+      type: "pages"
+    values:
+      layout: "default"
+      parent: "Projets"
+  - scope:
+      path: "guides"
+      type: "pages"
+    values:
+      layout: "default"
+      parent: "Guides"
