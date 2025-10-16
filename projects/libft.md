@@ -1,14 +1,15 @@
 ---
 layout: default
 title: "Libft"
+nav_order: 1
 description: "Ma bibliothèque C personnelle - Premier projet 42"
 icon: "book"
 ---
 
 # 🔷 Libft - Bibliothèque C personnelle
 
-<img src="https://img.shields.io/badge/Score-125%2F100-success" alt="Score" />
-<img src="https://img.shields.io/badge/Language-C-blue" alt="Language" />
+![Score](https://img.shields.io/badge/Score-125%2F100-success)
+![Language](https://img.shields.io/badge/Language-C-blue)
 
 ## Introduction
 
@@ -27,17 +28,17 @@ icon: "book"
   <h4>Maîtriser le C</h4>
   <p>Comprendre les bases du langage C : pointeurs, allocation mémoire, types de données</p>
 </div>
-  
+
   <div class="step">
   <h4>Reproduire la libc</h4>
   <p>Recréer les fonctions standard pour comprendre leur implémentation interne</p>
 </div>
-  
+
   <div class="step">
   <h4>Créer une bibliothèque</h4>
   <p>Organiser son code de manière modulaire et créer une bibliothèque statique</p>
 </div>
-  
+
   <div class="step">
   <h4>Bases solides</h4>
   <p>Constituer une base réutilisable pour tous les projets futurs</p>
@@ -111,9 +112,8 @@ icon: "book"
 ### Bonus : Listes chaînées
 
 {: .warning }
-> 
+>
 Les fonctions bonus permettent de manipuler des listes chaînées, une structure de données fondamentale en programmation.
-
 
 - `ft_lstnew` - Crée un nouvel élément
 - `ft_lstadd_front` - Ajoute un élément au début
@@ -128,49 +128,27 @@ Les fonctions bonus permettent de manipuler des listes chaînées, une structure
 ## Installation et compilation
 
 <div class="tabs-container">
-<div class="tab-buttons">
+  <div class="tab-buttons"></div>
   <div id="clone" class="tab-content">
 ```bash
     git clone https://github.com/NikoStano/libft.git
     cd libft
     ```
-</div>
-  
+  </div>
   <div id="compilation" class="tab-content">
 ```bash
     # Compilation standard
     make
-    
+
     # Avec les bonus
     make bonus
-    
+
     # Nettoyage
     make clean  # Supprime les .o
     make fclean # Supprime tout
     make re     # Recompile tout
     ```
-</div>
-  
-  <div id="utilisation" class="tab-content">
-```c
-    // Dans votre fichier main.c
-    #include "libft.h"
-    
-    int main(void)
-    {
-        char *str = ft_strdup("Hello 42!");
-        ft_putendl_fd(str, 1);
-        free(str);
-        return (0);
-    }
-    ```
-    
-    ```bash
-    # Compilation avec libft
-    gcc main.c -L. -lft -o program
-    ./program
-    ```
-</div>
+  </div>
 </div>
 </div>
 
@@ -186,12 +164,12 @@ int main(void)
     char *str1 = "Hello";
     char *str2 = " World!";
     char *result;
-    
+
     // Concaténation
     result = ft_strjoin(str1, str2);
     ft_putendl_fd(result, 1); // Affiche: Hello World!
     free(result);
-    
+
     // Split
     char **words = ft_split("Bonjour les amis", ' ');
     int i = 0;
@@ -202,7 +180,7 @@ int main(void)
         i++;
     }
     free(words);
-    
+
     return (0);
 }
 ```
@@ -215,12 +193,12 @@ int main(void)
 int main(void)
 {
     t_list *list = NULL;
-    
+
     // Ajout d'éléments
     ft_lstadd_back(&list, ft_lstnew("Premier"));
     ft_lstadd_back(&list, ft_lstnew("Deuxième"));
     ft_lstadd_back(&list, ft_lstnew("Troisième"));
-    
+
     // Parcours
     t_list *current = list;
     while (current)
@@ -228,10 +206,10 @@ int main(void)
         ft_putendl_fd((char *)current->content, 1);
         current = current->next;
     }
-    
+
     // Libération
     ft_lstclear(&list, free);
-    
+
     return (0);
 }
 ```
@@ -241,21 +219,20 @@ int main(void)
 <details>
 <summary>Gestion de la mémoire</summary>
 
-<Accordion title="Gestion de la mémoire">
-    - Toujours vérifier les retours de `malloc`
+- Toujours vérifier les retours de `malloc`
     - Libérer toute mémoire allouée
     - Utiliser Valgrind pour détecter les fuites
-    
+
     ```bash
     valgrind --leak-check=full ./program
     ```
 </details>
-  
+
   <details>
 <summary>Protection contre les NULL</summary>
 
 Toutes les fonctions doivent gérer les pointeurs NULL
-    
+
     ```c
     char *ft_strdup(const char *s)
     {
@@ -265,36 +242,32 @@ Toutes les fonctions doivent gérer les pointeurs NULL
     }
     ```
 </details>
-  
+
   <details>
 <summary>Norme 42</summary>
 
 - Maximum 25 lignes par fonction
     - Maximum 5 fonctions par fichier
     - Respect strict de la Norminette
-    
+
     ```bash
     norminette *.c *.h
     ```
 </details>
 
-
 ## Conseils et astuces
 
 {: .tip }
-> 
+>
 **Testez chaque fonction individuellement** avant de passer à la suivante. Créez vos propres tests ou utilisez des testeurs communautaires.
 
-
 {: .tip }
-> 
+>
 **Documentez votre code** avec des commentaires clairs. Cela vous aidera pour vos projets futurs.
 
-
 {: .warning }
-> 
+>
 **Attention aux fuites mémoire** : utilisez systématiquement Valgrind pour vérifier votre code.
-
 
 ## Ressources utiles
 
@@ -307,18 +280,18 @@ Toutes les fonctions doivent gérer les pointeurs NULL
     man malloc
     ```</p>
 </div>
-  
+
   <div class="project-card">
   <h3>cplusplus.com</h3>
   <p>Documentation complète des fonctions C</p>
   <a href="https://cplusplus.com/reference/cstring/" class="btn btn-primary">Voir plus</a>
 </div>
-  
+
   <div class="project-card">
   <h3>Valgrind</h3>
   <p>Outil indispensable pour détecter les fuites mémoire</p>
 </div>
-  
+
   <div class="project-card">
   <h3>GDB</h3>
   <p>Debugger pour tracer l'exécution du programme</p>
@@ -330,5 +303,5 @@ Toutes les fonctions doivent gérer les pointeurs NULL
 Libft est bien plus qu'un simple projet : c'est votre **boîte à outils personnelle** que vous utiliserez tout au long de votre parcours à 42. Prenez le temps de bien le construire !
 
 {: .check }
-> 
+>
 Une fois validé, ce projet vous servira de base pour tous vos futurs projets C à 42.

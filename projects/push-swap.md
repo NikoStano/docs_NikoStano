@@ -1,15 +1,16 @@
 ---
 layout: default
 title: "Push Swap"
+nav_order: 6
 description: "Algorithme de tri optimisé avec deux piles"
 icon: "arrows-up-down"
 ---
 
 # 🔄 Push Swap
 
-<img src="https://img.shields.io/badge/Score-125%2F100-success" alt="Score" />
-<img src="https://img.shields.io/badge/Language-C-blue" alt="Language" />
-<img src="https://img.shields.io/badge/Difficulty-Hard-red" alt="Difficulty" />
+![Score](https://img.shields.io/badge/Score-125%2F100-success)
+![Language](https://img.shields.io/badge/Language-C-blue)
+![Difficulty](https://img.shields.io/badge/Difficulty-Hard-red)
 
 ## Introduction
 
@@ -22,9 +23,8 @@ icon: "arrows-up-down"
 </div>
 
 {: .note }
-> 
+>
 Ce projet teste votre capacité à concevoir et optimiser des algorithmes de tri sous contraintes.
-
 
 ## Règles du jeu
 
@@ -40,154 +40,142 @@ Ce projet teste votre capacité à concevoir et optimiser des algorithmes de tri
 <details>
 <summary>sa (swap a)</summary>
 
-<Accordion title="sa (swap a)">
-    Intervertir les 2 premiers éléments de la stack A
-    
+Intervertir les 2 premiers éléments de la stack A
+
     ```
     Avant:  A: [3, 1, 2]    B: []
     sa
     Après:  A: [1, 3, 2]    B: []
     ```
 </details>
-  
+
   <details>
 <summary>sb (swap b)</summary>
 
 Intervertir les 2 premiers éléments de la stack B
-    
+
     ```
     Avant:  A: [1]       B: [5, 3]
     sb
     Après:  A: [1]       B: [3, 5]
     ```
 </details>
-  
+
   <details>
 <summary>ss (swap both)</summary>
 
 Faire `sa` et `sb` en même temps
-    
+
     ```
     Avant:  A: [3, 1]    B: [5, 2]
     ss
     Après:  A: [1, 3]    B: [2, 5]
     ```
 </details>
-  
+
   <details>
 <summary>pa (push a)</summary>
 
 Prendre le premier élément de B et le mettre en haut de A
-    
+
     ```
     Avant:  A: [1, 2]    B: [5, 3]
     pa
     Après:  A: [5, 1, 2] B: [3]
     ```
 </details>
-  
+
   <details>
 <summary>pb (push b)</summary>
 
 Prendre le premier élément de A et le mettre en haut de B
-    
+
     ```
     Avant:  A: [3, 1, 2]    B: []
     pb
     Après:  A: [1, 2]       B: [3]
     ```
 </details>
-  
+
   <details>
 <summary>ra (rotate a)</summary>
 
 Décaler tous les éléments de A vers le haut (premier devient dernier)
-    
+
     ```
     Avant:  A: [1, 2, 3]    B: []
     ra
     Après:  A: [2, 3, 1]    B: []
     ```
 </details>
-  
+
   <details>
 <summary>rb (rotate b)</summary>
 
 Décaler tous les éléments de B vers le haut
-    
+
     ```
     Avant:  A: []        B: [1, 2, 3]
     rb
     Après:  A: []        B: [2, 3, 1]
     ```
 </details>
-  
+
   <details>
 <summary>rr (rotate both)</summary>
 
 Faire `ra` et `rb` en même temps
 </details>
-  
+
   <details>
 <summary>rra (reverse rotate a)</summary>
 
 Décaler tous les éléments de A vers le bas (dernier devient premier)
-    
+
     ```
     Avant:  A: [1, 2, 3]    B: []
     rra
     Après:  A: [3, 1, 2]    B: []
     ```
 </details>
-  
+
   <details>
 <summary>rrb (reverse rotate b)</summary>
 
 Décaler tous les éléments de B vers le bas
-    
+
     ```
     Avant:  A: []        B: [1, 2, 3]
     rrb
     Après:  A: []        B: [3, 1, 2]
     ```
 </details>
-  
+
   <details>
 <summary>rrr (reverse rotate both)</summary>
 
 Faire `rra` et `rrb` en même temps
 </details>
 
-
 ## Objectifs de performance
 
 <div class="tabs-container">
-<div class="tab-buttons">
+  <div class="tab-buttons"></div>
   <div id="3-nombres" class="tab-content">
 - Maximum **3 opérations**
     - Facile avec conditions simples
-</div>
-  
+  </div>
   <div id="5-nombres" class="tab-content">
 - Maximum **12 opérations**
     - Utiliser un tri simple
-</div>
-  
+  </div>
   <div id="100-nombres" class="tab-content">
 - **Moins de 700** : 5 points ⭐⭐⭐⭐⭐
     - **Moins de 900** : 4 points ⭐⭐⭐⭐
     - **Moins de 1100** : 3 points ⭐⭐⭐
     - **Moins de 1300** : 2 points ⭐⭐
     - **Moins de 1500** : 1 point ⭐
-</div>
-  
-  <div id="500-nombres" class="tab-content">
-- **Moins de 5500** : 5 points ⭐⭐⭐⭐⭐
-    - **Moins de 7000** : 4 points ⭐⭐⭐⭐
-    - **Moins de 8500** : 3 points ⭐⭐⭐
-    - **Moins de 10000** : 2 points ⭐⭐
-    - **Moins de 11500** : 1 point ⭐
-</div>
+  </div>
 </div>
 </div>
 
@@ -249,21 +237,21 @@ int main(int argc, char **argv)
 {
     t_stack *stack_a;
     t_stack *stack_b;
-    
+
     if (argc < 2)
         return (0);
-    
+
     // Validation des arguments
     if (!validate_args(argc, argv))
     {
         ft_putendl_fd("Error", 2);
         return (1);
     }
-    
+
     // Initialisation des stacks
     stack_a = init_stack(argc, argv);
     stack_b = create_empty_stack();
-    
+
     // Si déjà trié, ne rien faire
     if (is_sorted(stack_a))
     {
@@ -271,7 +259,7 @@ int main(int argc, char **argv)
         free_stack(stack_b);
         return (0);
     }
-    
+
     // Choisir l'algorithme selon la taille
     if (stack_a->size <= 3)
         sort_three(stack_a);
@@ -279,11 +267,11 @@ int main(int argc, char **argv)
         sort_five(stack_a, stack_b);
     else
         sort_large(stack_a, stack_b);
-    
+
     // Libération
     free_stack(stack_a);
     free_stack(stack_b);
-    
+
     return (0);
 }
 ```
@@ -296,19 +284,19 @@ int validate_args(int argc, char **argv)
     int i;
     int j;
     long num;
-    
+
     i = 1;
     while (i < argc)
     {
         // Vérifier que c'est un nombre valide
         if (!is_valid_number(argv[i]))
             return (0);
-        
+
         // Vérifier les limites INT
         num = ft_atol(argv[i]);
         if (num < INT_MIN || num > INT_MAX)
             return (0);
-        
+
         // Vérifier les doublons
         j = i + 1;
         while (j < argc)
@@ -325,14 +313,14 @@ int validate_args(int argc, char **argv)
 int is_valid_number(char *str)
 {
     int i;
-    
+
     i = 0;
     if (str[i] == '+' || str[i] == '-')
         i++;
-    
+
     if (!str[i])
         return (0);
-    
+
     while (str[i])
     {
         if (!ft_isdigit(str[i]))
@@ -374,13 +362,13 @@ static void swap(t_stack *stack)
 {
     t_node *first;
     t_node *second;
-    
+
     if (!stack || !stack->top || !stack->top->next)
         return;
-    
+
     first = stack->top;
     second = first->next;
-    
+
     first->next = second->next;
     second->next = first;
     stack->top = second;
@@ -407,14 +395,14 @@ void pb(t_stack *stack_a, t_stack *stack_b, int print)
 static void push(t_stack *dst, t_stack *src)
 {
     t_node *tmp;
-    
+
     if (!src || !src->top)
         return;
-    
+
     tmp = src->top;
     src->top = src->top->next;
     src->size--;
-    
+
     tmp->next = dst->top;
     dst->top = tmp;
     dst->size++;
@@ -450,17 +438,17 @@ static void rotate(t_stack *stack)
 {
     t_node *first;
     t_node *last;
-    
+
     if (!stack || !stack->top || !stack->top->next)
         return;
-    
+
     first = stack->top;
     stack->top = first->next;
-    
+
     last = stack->top;
     while (last->next)
         last = last->next;
-    
+
     last->next = first;
     first->next = NULL;
 }
@@ -495,19 +483,19 @@ static void reverse_rotate(t_stack *stack)
 {
     t_node *last;
     t_node *second_last;
-    
+
     if (!stack || !stack->top || !stack->top->next)
         return;
-    
+
     second_last = NULL;
     last = stack->top;
-    
+
     while (last->next)
     {
         second_last = last;
         last = last->next;
     }
-    
+
     second_last->next = NULL;
     last->next = stack->top;
     stack->top = last;
@@ -524,11 +512,11 @@ void sort_three(t_stack *stack_a)
     int first;
     int second;
     int third;
-    
+
     first = stack_a->top->value;
     second = stack_a->top->next->value;
     third = stack_a->top->next->next->value;
-    
+
     if (first > second && second < third && first < third)
         sa(stack_a, 1);  // 2 1 3
     else if (first > second && second > third)
@@ -556,10 +544,10 @@ void sort_five(t_stack *stack_a, t_stack *stack_b)
     // Pousser les 2 plus petits dans B
     push_min_to_b(stack_a, stack_b);
     push_min_to_b(stack_a, stack_b);
-    
+
     // Trier les 3 restants dans A
     sort_three(stack_a);
-    
+
     // Ramener les 2 de B dans A
     pa(stack_a, stack_b, 1);
     pa(stack_a, stack_b, 1);
@@ -569,10 +557,10 @@ void push_min_to_b(t_stack *stack_a, t_stack *stack_b)
 {
     int min_pos;
     int size;
-    
+
     min_pos = find_min_position(stack_a);
     size = stack_a->size;
-    
+
     // Amener le minimum en haut
     if (min_pos <= size / 2)
     {
@@ -584,7 +572,7 @@ void push_min_to_b(t_stack *stack_a, t_stack *stack_b)
         while (min_pos++ < size)
             rra(stack_a, 1);
     }
-    
+
     // Pousser dans B
     pb(stack_a, stack_b, 1);
 }
@@ -597,23 +585,23 @@ void sort_large(t_stack *stack_a, t_stack *stack_b)
 {
     // 1. Indexer les valeurs (0 à n-1)
     index_stack(stack_a);
-    
+
     // 2. Pousser tout dans B par chunks, sauf 3
     push_to_b_by_chunks(stack_a, stack_b);
-    
+
     // 3. Trier les 3 restants dans A
     sort_three(stack_a);
-    
+
     // 4. Ramener de B vers A de manière optimisée
     while (stack_b->size > 0)
     {
         // Calculer les coûts pour chaque élément de B
         calculate_costs(stack_a, stack_b);
-        
+
         // Exécuter le mouvement le moins coûteux
         execute_cheapest_move(stack_a, stack_b);
     }
-    
+
     // 5. Rotation finale pour mettre le minimum en haut
     final_rotation(stack_a);
 }
@@ -627,13 +615,13 @@ void index_stack(t_stack *stack)
     t_node *current;
     t_node *compare;
     int index;
-    
+
     current = stack->top;
     while (current)
     {
         index = 0;
         compare = stack->top;
-        
+
         // Compter combien d'éléments sont plus petits
         while (compare)
         {
@@ -641,7 +629,7 @@ void index_stack(t_stack *stack)
                 index++;
             compare = compare->next;
         }
-        
+
         current->index = index;
         current = current->next;
     }
@@ -656,16 +644,16 @@ void push_to_b_by_chunks(t_stack *stack_a, t_stack *stack_b)
     int chunk_size;
     int chunk_max;
     int pushed;
-    
+
     // Définir la taille des chunks selon la taille totale
     if (stack_a->size <= 100)
         chunk_size = 20;
     else
         chunk_size = 35;
-    
+
     chunk_max = chunk_size;
     pushed = 0;
-    
+
     // Pousser tout sauf 3 éléments
     while (stack_a->size > 3)
     {
@@ -673,14 +661,14 @@ void push_to_b_by_chunks(t_stack *stack_a, t_stack *stack_b)
         {
             pb(stack_a, stack_b, 1);
             pushed++;
-            
+
             // Rotation de B pour optimiser
             if (stack_b->top->index < chunk_max - chunk_size / 2)
                 rb(stack_b, 1);
         }
         else
             ra(stack_a, 1);
-        
+
         // Passer au chunk suivant
         if (pushed == chunk_max)
             chunk_max += chunk_size;
@@ -696,31 +684,31 @@ void calculate_costs(t_stack *stack_a, t_stack *stack_b)
     t_node *current_b;
     int size_a;
     int size_b;
-    
+
     size_a = stack_a->size;
     size_b = stack_b->size;
-    
+
     assign_positions(stack_a);
     assign_positions(stack_b);
-    
+
     current_b = stack_b->top;
     while (current_b)
     {
         // Trouver la position cible dans A
         current_b->target_pos = find_target_position(stack_a, current_b->index);
-        
+
         // Calculer le coût pour B
         if (current_b->pos <= size_b / 2)
             current_b->cost_b = current_b->pos;
         else
             current_b->cost_b = -(size_b - current_b->pos);
-        
+
         // Calculer le coût pour A
         if (current_b->target_pos <= size_a / 2)
             current_b->cost_a = current_b->target_pos;
         else
             current_b->cost_a = -(size_a - current_b->target_pos);
-        
+
         current_b = current_b->next;
     }
 }
@@ -730,10 +718,10 @@ int find_target_position(t_stack *stack_a, int index_b)
     t_node *current;
     int target_index;
     int target_pos;
-    
+
     target_index = INT_MAX;
     target_pos = 0;
-    
+
     current = stack_a->top;
     while (current)
     {
@@ -745,11 +733,11 @@ int find_target_position(t_stack *stack_a, int index_b)
         }
         current = current->next;
     }
-    
+
     // Si aucun trouvé, chercher le minimum dans A
     if (target_index == INT_MAX)
         target_pos = find_min_position(stack_a);
-    
+
     return (target_pos);
 }
 ```
@@ -762,11 +750,11 @@ void execute_cheapest_move(t_stack *stack_a, t_stack *stack_b)
     t_node *cheapest;
     int cost_a;
     int cost_b;
-    
+
     cheapest = find_cheapest(stack_b);
     cost_a = cheapest->cost_a;
     cost_b = cheapest->cost_b;
-    
+
     // Optimiser avec les rotations doubles
     while (cost_a > 0 && cost_b > 0)
     {
@@ -774,14 +762,14 @@ void execute_cheapest_move(t_stack *stack_a, t_stack *stack_b)
         cost_a--;
         cost_b--;
     }
-    
+
     while (cost_a < 0 && cost_b < 0)
     {
         rrr(stack_a, stack_b, 1);
         cost_a++;
         cost_b++;
     }
-    
+
     // Rotations restantes pour A
     while (cost_a > 0)
     {
@@ -793,7 +781,7 @@ void execute_cheapest_move(t_stack *stack_a, t_stack *stack_b)
         rra(stack_a, 1);
         cost_a++;
     }
-    
+
     // Rotations restantes pour B
     while (cost_b > 0)
     {
@@ -805,7 +793,7 @@ void execute_cheapest_move(t_stack *stack_a, t_stack *stack_b)
         rrb(stack_b, 1);
         cost_b++;
     }
-    
+
     // Push vers A
     pa(stack_a, stack_b, 1);
 }
@@ -816,15 +804,15 @@ t_node *find_cheapest(t_stack *stack_b)
     t_node *cheapest;
     int min_cost;
     int current_cost;
-    
+
     current = stack_b->top;
     cheapest = current;
     min_cost = INT_MAX;
-    
+
     while (current)
     {
         current_cost = abs(current->cost_a) + abs(current->cost_b);
-        
+
         if (current_cost < min_cost)
         {
             min_cost = current_cost;
@@ -832,7 +820,7 @@ t_node *find_cheapest(t_stack *stack_b)
         }
         current = current->next;
     }
-    
+
     return (cheapest);
 }
 ```
@@ -844,10 +832,10 @@ void final_rotation(t_stack *stack_a)
 {
     int min_pos;
     int size;
-    
+
     min_pos = find_min_position(stack_a);
     size = stack_a->size;
-    
+
     if (min_pos <= size / 2)
     {
         while (min_pos--)
@@ -871,19 +859,19 @@ int main(int argc, char **argv)
     t_stack *stack_a;
     t_stack *stack_b;
     char    *line;
-    
+
     if (argc < 2)
         return (0);
-    
+
     if (!validate_args(argc, argv))
     {
         ft_putendl_fd("Error", 2);
         return (1);
     }
-    
+
     stack_a = init_stack(argc, argv);
     stack_b = create_empty_stack();
-    
+
     // Lire les opérations depuis stdin
     while (get_next_line(0, &line) > 0)
     {
@@ -895,13 +883,13 @@ int main(int argc, char **argv)
         }
         free(line);
     }
-    
+
     // Vérifier si trié
     if (is_sorted(stack_a) && stack_b->size == 0)
         ft_putendl_fd("OK", 1);
     else
         ft_putendl_fd("KO", 1);
-    
+
     free_stack(stack_a);
     free_stack(stack_b);
     return (0);
@@ -1005,33 +993,28 @@ make
 ## Conseils d'optimisation
 
 {: .tip }
-> 
+>
 **Utilisez les opérations doubles** (ss, rr, rrr) quand c'est possible pour économiser des mouvements.
 
-
 {: .tip }
-> 
+>
 **Chunk size optimal** : Pour 100 nombres, utilisez 20. Pour 500, utilisez 35-40.
 
-
 {: .tip }
-> 
+>
 **Rotation intelligente** : Toujours choisir le chemin le plus court (rotate vs reverse rotate).
 
-
 {: .warning }
-> 
+>
 **Attention à l'indexation** : L'index doit être calculé correctement (0 à n-1) pour que l'algorithme fonctionne.
-
 
 ## Erreurs fréquentes
 
 <details>
 <summary>Mauvaise gestion des doublons</summary>
 
-<Accordion title="Mauvaise gestion des doublons">
-    **Problème** : Ne pas détecter les doublons dans les arguments
-    
+**Problème** : Ne pas détecter les doublons dans les arguments
+
     **Solution** : Vérifier tous les arguments entre eux
     ```c
     // Vérifier chaque paire
@@ -1041,12 +1024,12 @@ make
                 return (0);
     ```
 </details>
-  
+
   <details>
 <summary>Dépassement d'INT</summary>
 
 **Problème** : Ne pas vérifier les limites de INT_MIN et INT_MAX
-    
+
     **Solution** : Utiliser `long` pour parser puis vérifier
     ```c
     long num = ft_atol(argv[i]);
@@ -1054,22 +1037,22 @@ make
         return (0);
     ```
 </details>
-  
+
   <details>
 <summary>Fuites mémoire</summary>
 
 **Problème** : Oublier de libérer les nœuds de la liste
-    
+
     **Solution** : Fonction de libération complète
     ```c
     void free_stack(t_stack *stack)
     {
         t_node *current;
         t_node *next;
-        
+
         if (!stack)
             return;
-        
+
         current = stack->top;
         while (current)
         {
@@ -1081,12 +1064,12 @@ make
     }
     ```
 </details>
-  
+
   <details>
 <summary>Mauvais calcul de coût</summary>
 
 **Problème** : Ne pas utiliser le chemin le plus court
-    
+
     **Solution** : Comparer position vs (size - position)
     ```c
     if (pos <= size / 2)
@@ -1095,7 +1078,6 @@ make
         cost = -(size - pos);  // reverse rotate (négatif)
     ```
 </details>
-
 
 ## Makefile
 
@@ -1163,48 +1145,26 @@ re: fclean all
 ## Cas de test importants
 
 <div class="tabs-container">
-<div class="tab-buttons">
+  <div class="tab-buttons"></div>
   <div id="déjà-trié" class="tab-content">
 ```bash
     # Ne doit rien afficher
     ./push_swap 1 2 3 4 5
     # Output: (rien)
     ```
-</div>
-  
+  </div>
   <div id="ordre-inversé" class="tab-content">
 ```bash
     # Pire cas
     ./push_swap 5 4 3 2 1
     ```
-</div>
-  
+  </div>
   <div id="nombres-négatifs" class="tab-content">
 ```bash
     ./push_swap -5 -2 0 3 1
     ./push_swap -2147483648 0 2147483647
     ```
-</div>
-  
-  <div id="erreurs" class="tab-content">
-```bash
-    # Doublons
-    ./push_swap 1 2 3 2
-    # Output: Error
-    
-    # Pas un nombre
-    ./push_swap 1 2 abc
-    # Output: Error
-    
-    # Dépassement INT
-    ./push_swap 2147483648
-    # Output: Error
-    
-    # Pas d'arguments
-    ./push_swap
-    # Output: (rien, pas d'erreur)
-    ```
-</div>
+  </div>
 </div>
 </div>
 
@@ -1213,30 +1173,29 @@ re: fclean all
 <details>
 <summary>Pré-tri dans B</summary>
 
-<Accordion title="Pré-tri dans B">
-    Au lieu de pousser aléatoirement, pousser en gardant B trié
-    
+Au lieu de pousser aléatoirement, pousser en gardant B trié
+
     - Économise des rotations lors du retour vers A
     - Réduit le nombre total d'opérations
 </details>
-  
+
   <details>
 <summary>Optimisation des rotations doubles</summary>
 
 Détecter quand on peut utiliser rr ou rrr
-    
+
     ```c
     // Au lieu de ra + rb, utiliser rr
     if (cost_a > 0 && cost_b > 0)
         use_rr_optimization();
     ```
 </details>
-  
+
   <details>
 <summary>Meilleure sélection de chunks</summary>
 
 Adapter la taille des chunks dynamiquement
-    
+
     ```c
     if (size <= 100)
         chunk_size = 20;
@@ -1246,16 +1205,15 @@ Adapter la taille des chunks dynamiquement
         chunk_size = 40;
     ```
 </details>
-  
+
   <details>
 <summary>Algorithme A* ou Greedy amélioré</summary>
 
 Pour les perfectionnistes qui veulent le minimum absolu d'opérations
-    
+
     - Plus complexe à implémenter
     - Peut réduire de 10-15% le nombre d'opérations
 </details>
-
 
 ## Stratégies selon la taille
 
@@ -1331,19 +1289,19 @@ B: []
   <p>Voir les mouvements en temps réel</p>
   <a href="https://github.com/o-reo/push_swap_visualizer" class="btn btn-primary">Voir plus</a>
 </div>
-  
+
   <div class="project-card">
   <h3>Tester</h3>
   <p>Testeur automatique complet</p>
   <a href="https://github.com/LeoFu9487/push_swap_tester" class="btn btn-primary">Voir plus</a>
 </div>
-  
+
   <div class="project-card">
   <h3>Algorithme Turk</h3>
   <p>Explication détaillée de l'algorithme</p>
   <a href="https://medium.com/@ayogun/push-swap-c1f5d2d41e97" class="btn btn-primary">Voir plus</a>
 </div>
-  
+
   <div class="project-card">
   <h3>Listes chaînées</h3>
   <p>Comprendre les listes chaînées en C</p>
@@ -1359,7 +1317,7 @@ void print_stacks(t_stack *a, t_stack *b)
 {
     t_node *current_a = a->top;
     t_node *current_b = b->top;
-    
+
     printf("\n--- STACKS ---\n");
     printf("A: ");
     while (current_a)
@@ -1382,7 +1340,7 @@ int count_operations(char *operations_file)
     int fd;
     char *line;
     int count;
-    
+
     fd = open(operations_file, O_RDONLY);
     count = 0;
     while (get_next_line(fd, &line) > 0)
@@ -1404,15 +1362,13 @@ Push Swap est un projet d'algorithmie complexe qui demande :
 - Gestion rigoureuse de la mémoire
 
 {: .check }
-> 
+>
 Une fois maîtrisé, vous aurez développé une excellente intuition pour l'optimisation d'algorithmes sous contraintes !
 
-
 {: .note }
-> 
+>
 Ne vous découragez pas si vos premiers essais dépassent les limites. L'optimisation se fait par itérations successives.
 
-
 {: .tip }
-> 
+>
 **Conseil final** : Commencez par un algorithme simple qui fonctionne, puis optimisez progressivement !

@@ -9,8 +9,8 @@ theme: just-the-docs
 color_scheme: dark
 
 # Logo et favicon
-logo: "/assets/images/logo.png"
-favicon_ico: "/assets/images/favicon.png"
+logo: "/assets/images/logo.svg"
+favicon_ico: "/assets/images/favicon.svg"
 
 # Configuration du thème Just the Docs
 search_enabled: true
@@ -41,6 +41,7 @@ gh_edit_link: true
 gh_edit_link_text: "Modifier cette page sur GitHub"
 gh_edit_repository: "https://github.com/NikoStano/nikostano.github.io"
 gh_edit_branch: "main"
+gh_edit_view_mode: "edit"
 
 # Paramètres généraux
 permalink: pretty
@@ -50,6 +51,9 @@ exclude:
   - Gemfile.lock
   - node_modules
   - vendor
+  - "*.py"
+  - migration.md
+  - convert_mdx_to_md.py
 
 # Plugins
 plugins:
@@ -61,12 +65,19 @@ plugins:
 # Markdown
 markdown: kramdown
 kramdown:
+  input: GFM
   syntax_highlighter: rouge
   syntax_highlighter_opts:
     block:
-      line_numbers: true
+      line_numbers: false
+    default_lang: plaintext
 
-# Collections (optionnel)
+# Includes custom CSS and JS
+head_custom: |
+  <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+  <script defer src="{{ '/assets/js/custom.js' | relative_url }}"></script>
+
+# Collections
 collections:
   projects:
     output: true
@@ -94,3 +105,24 @@ defaults:
     values:
       layout: "default"
       parent: "Guides"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "default"
+      parent: "Projets"
+  - scope:
+      path: ""
+      type: "guides"
+    values:
+      layout: "default"
+      parent: "Guides"
+
+# Compression
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  startings: []
+  blanklines: false
+  profile: false

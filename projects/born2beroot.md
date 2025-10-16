@@ -1,24 +1,24 @@
 ---
 layout: default
 title: "Born2beroot"
+nav_order: 4
 description: "Administration système et virtualisation"
 icon: "server"
 ---
 
 # 🖥️ Born2beroot
 
-<img src="https://img.shields.io/badge/Score-125%2F100-success" alt="Score" />
-<img src="https://img.shields.io/badge/OS-Rocky%20Linux-blue" alt="OS" />
-<img src="https://img.shields.io/badge/Type-SysAdmin-orange" alt="Type" />
+![Score](https://img.shields.io/badge/Score-125%2F100-success)
+![OS](https://img.shields.io/badge/OS-Rocky%20Linux-blue)
+![Type](https://img.shields.io/badge/Type-SysAdmin-orange)
 
 ## Introduction
 
 **Born2beroot** est votre premier projet d'administration système. Vous devez créer et configurer une machine virtuelle sous Rocky Linux (ou Debian) avec des politiques de sécurité strictes.
 
 {: .note }
-> 
+>
 Ce projet vous initie aux concepts fondamentaux de l'administration système Linux : virtualisation, partitionnement, services, sécurité et monitoring.
-
 
 ## Objectifs du projet
 
@@ -27,17 +27,17 @@ Ce projet vous initie aux concepts fondamentaux de l'administration système Lin
   <h4>Créer une VM</h4>
   <p>Installer Rocky Linux sur VirtualBox ou UTM</p>
 </div>
-  
+
   <div class="step">
   <h4>Configurer LVM</h4>
   <p>Mettre en place le Logical Volume Manager avec partitions chiffrées</p>
 </div>
-  
+
   <div class="step">
   <h4>Sécuriser le système</h4>
   <p>Configurer SSH, pare-feu, politique de mots de passe</p>
 </div>
-  
+
   <div class="step">
   <h4>Créer un script monitoring</h4>
   <p>Script bash affichant des informations système toutes les 10 minutes</p>
@@ -63,9 +63,8 @@ sda
 ```
 
 {: .warning }
-> 
+>
 La partition principale doit être chiffrée avec LUKS. Vous devrez entrer le mot de passe au démarrage.
-
 
 ### Services à configurer
 
@@ -75,7 +74,7 @@ La partition principale doit être chiffrée avec LUKS. Vous devrez entrer le mo
 - Port personnalisé (pas 22)
   - Interdire connexion root
   - Utiliser clés SSH
-  
+
   ```bash
   # /etc/ssh/sshd_config
   Port 4242
@@ -89,7 +88,7 @@ La partition principale doit être chiffrée avec LUKS. Vous devrez entrer le mo
 
 - Autoriser uniquement le port SSH
   - Bloquer tout le reste par défaut
-  
+
   ```bash
   ufw enable
   ufw allow 4242
@@ -103,7 +102,7 @@ La partition principale doit être chiffrée avec LUKS. Vous devrez entrer le mo
 - Configuration stricte
   - Limitation des tentatives
   - Logs des commandes
-  
+
   ```bash
   # /etc/sudoers.d/sudo_config
   Defaults  passwd_tries=3
@@ -122,14 +121,14 @@ La partition principale doit être chiffrée avec LUKS. Vous devrez entrer le mo
   - Avertissement 7 jours avant expiration
   - Longueur minimum 10 caractères
   - Complexité requise
-  
+
   ```bash
   # /etc/login.defs
   PASS_MAX_DAYS 30
   PASS_MIN_DAYS 2
   PASS_WARN_AGE 7
   ```
-  
+
   ```bash
   # /etc/security/pwquality.conf
   minlen = 10
@@ -148,7 +147,7 @@ La partition principale doit être chiffrée avec LUKS. Vous devrez entrer le mo
 ### 1. Création de la VM
 
 <div class="tabs-container">
-<div class="tab-buttons">
+  <div class="tab-buttons"></div>
   <div id="virtualbox" class="tab-content">
 ```bash
     # Configuration recommandée
@@ -156,24 +155,11 @@ La partition principale doit être chiffrée avec LUKS. Vous devrez entrer le mo
     Version: Red Hat (64-bit)
     RAM: 2048 MB
     Disque: 30 GB (VDI, dynamiquement alloué)
-    
+
     # Réseau
     Adaptateur 1: NAT ou Pont
     ```
-</div>
-  
-  <div id="utm-(mac-m1/m2)" class="tab-content">
-```bash
-    # Configuration
-    Type: Linux
-    Architecture: ARM64
-    RAM: 2048 MB
-    Disque: 30 GB
-    
-    # ISO
-    Rocky Linux 9 ARM64
-    ```
-</div>
+  </div>
 </div>
 </div>
 
@@ -184,16 +170,16 @@ La partition principale doit être chiffrée avec LUKS. Vous devrez entrer le mo
   <h4>Démarrage</h4>
   <p>Monter l'ISO Rocky Linux et démarrer la VM</p>
 </div>
-  
+
   <div class="step">
   <h4>Langue et clavier</h4>
   <p>Sélectionner Anglais et disposition clavier</p>
 </div>
-  
+
   <div class="step">
   <h4>Partitionnement manuel</h4>
   <p>Choisir "Custom" pour créer les partitions manuellement
-    
+
     ```
     1. Créer /boot (512M, ext4)
     2. Créer partition chiffrée (reste du disque)
@@ -201,21 +187,21 @@ La partition principale doit être chiffrée avec LUKS. Vous devrez entrer le mo
     4. Créer les logical volumes
     ```</p>
 </div>
-  
+
   <div class="step">
   <h4>Chiffrement</h4>
   <p>Activer le chiffrement LUKS sur la partition principale
-    
+
     **Mot de passe fort requis !**</p>
 </div>
-  
+
   <div class="step">
   <h4>Utilisateur</h4>
   <p>- Créer utilisateur (votre login 42)
     - Définir mot de passe root
     - NE PAS créer d'utilisateur supplémentaire pendant l'installation</p>
 </div>
-  
+
   <div class="step">
   <h4>Installation minimale</h4>
   <p>Choisir "Minimal Install" - pas d'interface graphique</p>
@@ -406,9 +392,8 @@ sudo crontab -e
 ```
 
 {: .tip }
-> 
+>
 Pour tester sans attendre 10 minutes : `sudo /usr/local/bin/monitoring.sh`
-
 
 ## Commandes essentielles
 
@@ -513,22 +498,21 @@ lsblk
 <details>
 <summary>Quelle est la différence entre apt et aptitude ?</summary>
 
-<Accordion title="Quelle est la différence entre apt et aptitude ?">
-    - **apt** : Interface en ligne de commande simple
+- **apt** : Interface en ligne de commande simple
     - **aptitude** : Interface plus avancée avec résolution de dépendances
-    
+
     Sur Rocky Linux, on utilise **dnf** (ou yum)
 </details>
-  
+
   <details>
 <summary>Qu'est-ce que SELinux / AppArmor ?</summary>
 
 Systèmes de contrôle d'accès obligatoire (MAC) qui renforcent la sécurité
-    
+
     - **SELinux** : utilisé par Rocky Linux/RedHat
     - **AppArmor** : utilisé par Debian/Ubuntu
 </details>
-  
+
   <details>
 <summary>Comment fonctionne LVM ?</summary>
 
@@ -536,10 +520,10 @@ Systèmes de contrôle d'accès obligatoire (MAC) qui renforcent la sécurité
     - Redimensionner les partitions à chaud
     - Créer des snapshots
     - Gérer plusieurs disques comme un seul volume
-    
+
     Hiérarchie : Physical Volume → Volume Group → Logical Volume
 </details>
-  
+
   <details>
 <summary>Pourquoi sudo ?</summary>
 
@@ -548,15 +532,14 @@ Systèmes de contrôle d'accès obligatoire (MAC) qui renforcent la sécurité
     - Permissions granulaires
     - Logs des actions
 </details>
-  
+
   <details>
 <summary>Qu'est-ce qu'UFW ?</summary>
 
 **Uncomplicated Firewall** : interface simplifiée pour iptables
-    
+
     Permet de gérer facilement les règles de pare-feu
 </details>
-
 
 ## Checklist de défense
 
@@ -568,7 +551,7 @@ Systèmes de contrôle d'accès obligatoire (MAC) qui renforcent la sécurité
     - [ ] UFW actif avec bonnes règles
     - [ ] Partitionnement correct (lsblk)</p>
 </div>
-  
+
   <div class="step">
   <h4>Utilisateurs et groupes</h4>
   <p>- [ ] Créer nouvel utilisateur
@@ -576,7 +559,7 @@ Systèmes de contrôle d'accès obligatoire (MAC) qui renforcent la sécurité
     - [ ] Ajouter utilisateur au groupe
     - [ ] Expliquer politique de mots de passe</p>
 </div>
-  
+
   <div class="step">
   <h4>Hostname et partitions</h4>
   <p>- [ ] Afficher hostname
@@ -584,27 +567,27 @@ Systèmes de contrôle d'accès obligatoire (MAC) qui renforcent la sécurité
     - [ ] Afficher partitions (lsblk)
     - [ ] Expliquer LVM</p>
 </div>
-  
+
   <div class="step">
   <h4>Sudo</h4>
   <p>- [ ] Vérifier config sudo
     - [ ] Montrer les logs
     - [ ] Expliquer TTY requirement</p>
 </div>
-  
+
   <div class="step">
   <h4>UFW</h4>
   <p>- [ ] Vérifier règles
     - [ ] Ajouter/supprimer règle</p>
 </div>
-  
+
   <div class="step">
   <h4>SSH</h4>
   <p>- [ ] Vérifier config
     - [ ] Expliquer pourquoi pas root
     - [ ] Tester connexion</p>
 </div>
-  
+
   <div class="step">
   <h4>Script monitoring</h4>
   <p>- [ ] Expliquer chaque ligne
@@ -644,19 +627,19 @@ Installer et configurer un service utile de votre choix :
     ```
     Configuration complète de sudo</p>
 </div>
-  
+
   <div class="project-card">
   <h3>Rocky Linux Docs</h3>
   <p>Documentation officielle</p>
   <a href="https://docs.rockylinux.org/" class="btn btn-primary">Voir plus</a>
 </div>
-  
+
   <div class="project-card">
   <h3>LVM Guide</h3>
   <p>Comprendre LVM</p>
   <a href="https://www.redhat.com/sysadmin/lvm-vs-partitioning" class="btn btn-primary">Voir plus</a>
 </div>
-  
+
   <div class="project-card">
   <h3>SSH Hardening</h3>
   <p>Sécuriser SSH</p>
@@ -669,10 +652,9 @@ Installer et configurer un service utile de votre choix :
 Born2beroot est votre porte d'entrée dans le monde de l'administration système. Les compétences acquises sont essentielles pour comprendre comment fonctionnent les serveurs Linux.
 
 {: .check }
-> 
+>
 Ce projet vous servira de base pour tous les projets futurs nécessitant un serveur ou une VM.
 
-
 {: .note }
-> 
+>
 Prenez le temps de comprendre chaque commande plutôt que de simplement copier-coller. L'évaluation testera votre compréhension réelle !
