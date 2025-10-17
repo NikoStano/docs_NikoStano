@@ -15,8 +15,8 @@ Ce guide vous aidera à cloner, compiler et exécuter tous mes projets 42.
   <div class="step">
   <h4>Système d'exploitation</h4>
   <p>- **macOS** (recommandé pour les projets graphiques)
-    - **Linux** (Ubuntu, Debian, Rocky Linux)
-    - **WSL2** pour Windows (limité pour les projets graphiques)</p>
+      - **Linux** (Ubuntu, Debian, Rocky Linux)
+      - **WSL2** pour Windows (limité pour les projets graphiques)</p>
 </div>
 
   <div class="step">

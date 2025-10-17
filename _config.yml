@@ -2,7 +2,7 @@
 title: "NikoStano - 42 Paris"
 description: "Documentation des projets de nistanoj @ 42 Paris"
 baseurl: ""
-url: "https://nikostano.github.io/docs_NikoStano"
+url: "https://nikostano.github.io"
 
 # Thème
 theme: just-the-docs
@@ -23,7 +23,7 @@ search:
   rel_url: true
   button: false
 
-# Navigation
+# Amélioration de la navigation
 nav_sort: case_insensitive
 nav_external_links:
   - title: GitHub
@@ -33,12 +33,22 @@ nav_external_links:
     url: https://profile.intra.42.fr/users/nistanoj
     hide_icon: false
 
-# Footer
-footer_content: "Copyright &copy; 2024 NikoStano. Tous droits réservés."
+# Retour en haut de page
+back_to_top: true
+back_to_top_text: "Retour en haut"
+
+# Footer amélioré
+footer_content: |
+  <div style="text-align: center;">
+    <p>© 2024 NikoStano • 42 Paris</p>
+    <p style="font-size: 0.875rem; color: #94a3b8;">
+      Fait avec ❤️ et beaucoup de ☕
+    </p>
+  </div>
 
 # Liens de bas de page
 gh_edit_link: true
-gh_edit_link_text: "Modifier cette page sur GitHub"
+gh_edit_link_text: "✏️ Modifier sur GitHub"
 gh_edit_repository: "https://github.com/NikoStano/nikostano.github.io"
 gh_edit_branch: "main"
 gh_edit_view_mode: "edit"
@@ -62,7 +72,7 @@ plugins:
   - jekyll-feed
   - jekyll-relative-links
 
-# Markdown
+# Markdown amélioré
 markdown: kramdown
 kramdown:
   input: GFM
@@ -71,11 +81,14 @@ kramdown:
     block:
       line_numbers: false
     default_lang: plaintext
+    css_class: 'highlight'
 
 # Includes custom CSS and JS
 head_custom: |
   <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
   <script defer src="{{ '/assets/js/custom.js' | relative_url }}"></script>
+  <!-- Préchargement des polices pour performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 
 # Collections
 collections:
@@ -86,7 +99,7 @@ collections:
     output: true
     permalink: /guides/:name/
 
-# Defaults
+# Defaults optimisés
 defaults:
   - scope:
       path: ""
@@ -118,7 +131,7 @@ defaults:
       layout: "default"
       parent: "Guides"
 
-# Compression
+# Compression HTML
 compress_html:
   clippings: all
   comments: all
@@ -126,3 +139,23 @@ compress_html:
   startings: []
   blanklines: false
   profile: false
+
+# Configuration SEO
+author: NikoStano
+twitter:
+  username: nistanoj
+  card: summary_large_image
+logo: /assets/images/favicon.svg
+social:
+  name: NikoStano
+  links:
+    - https://github.com/NikoStano
+    - https://profile.intra.42.fr/users/nistanoj
+
+# Google Analytics (optionnel)
+# ga_tracking: UA-XXXXXXXXX-X
+# ga_tracking_anonymize_ip: true
+
+# Configuration des couleurs pour le code
+# (Compatible avec le dark mode)
+code_theme: tomorrow-night
