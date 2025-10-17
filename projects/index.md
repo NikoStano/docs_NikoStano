@@ -74,8 +74,8 @@ Découvrez tous mes projets réalisés durant mon cursus à **42 Paris**. Chaque
 
 <div class="card-container">
   <div class="project-card">
-    <p>"![Score](https://img.shields.io/badge/Score-125%2F100-success)"</p>
     <h3>📡 Minitalk</h3>
+    <span class="badge badge-success">125/100</span>
     <p>Communication client-serveur avec signaux Unix</p>
     <p><small>Langages : C | Difficulté : Moyen</small></p>
     <a href="{{ site.baseurl }}/projects/minitalk" class="btn btn-primary">Voir plus</a>

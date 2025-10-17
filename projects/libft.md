@@ -131,14 +131,14 @@ Les fonctions bonus permettent de manipuler des listes chaînées, une structure
   <div class="tab-buttons"></div>
   <div id="clone" class="tab-content">
 
-    ```bash
+  ```bash
     git clone https://github.com/NikoStano/libft.git
     cd libft
-    ```
+  ```
   </div>
   <div id="compilation" class="tab-content">
 
-    ```bash
+  ```bash
     # Compilation standard
     make
 
@@ -149,7 +149,7 @@ Les fonctions bonus permettent de manipuler des listes chaînées, une structure
     make clean  # Supprime les .o
     make fclean # Supprime tout
     make re     # Recompile tout
-    ```
+  ```
   </div>
 </div>
 </div>
