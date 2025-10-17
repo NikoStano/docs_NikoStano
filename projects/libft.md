@@ -213,14 +213,14 @@ int main(void)
 ## Points techniques importants
 
 <details>
-<summary>**Gestion de la mémoire**</summary>
+<summary>Gestion de la mémoire</summary>
 
-  - Toujours vérifier les retours de `malloc`
-  - Libérer toute mémoire allouée
-  - Utiliser Valgrind pour détecter les fuites
-  ```bash
-    valgrind --leak-check=full ./program
-  ```
+- Toujours vérifier les retours de `malloc`
+- Libérer toute mémoire allouée
+- Utiliser Valgrind pour détecter les fuites
+```bash
+  valgrind --leak-check=full ./program
+```
 </details>
 
   <details>

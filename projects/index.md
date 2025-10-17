@@ -16,24 +16,27 @@ Découvrez tous mes projets réalisés durant mon cursus à **42 Paris**. Chaque
 
 <div class="card-container">
   <div class="project-card">
-    <span class="badge badge-success">120/100</span>
+    <!-- <span class="badge badge-success">120/100</span> -->
     <h3>🔷 Libft</h3>
+    <img src="https://img.shields.io/badge/Score-120%2F100-success" alt="Score"/>
     <p>Ma bibliothèque C personnelle - Premier projet du cursus</p>
     <p><small>Langages : C | Difficulté : Facile</small></p>
     <a href="{{ site.baseurl }}/projects/libft" class="btn btn-primary">Voir plus</a>
   </div>
 
   <div class="project-card">
-    <span class="badge badge-success">112/100</span>
+    <!-- <span class="badge badge-success">112/100</span> -->
     <h3>📄 Get Next Line</h3>
+    <img src="https://img.shields.io/badge/Score-112%2F100-success" alt="Score"/>
     <p>Fonction de lecture ligne par ligne</p>
     <p><small>Langages : C | Difficulté : Moyen</small></p>
     <a href="{{ site.baseurl }}/projects/get-next-line" class="btn btn-primary">Voir plus</a>
   </div>
 
   <div class="project-card">
-    <span class="badge badge-success">100/100</span>
+    <!-- <span class="badge badge-success">100/100</span> -->
     <h3>🖨️ ft_printf</h3>
+    <img src="https://img.shields.io/badge/Score-100%2F100-success" alt="Score"/>
     <p>Reproduction de la fonction printf</p>
     <p><small>Langages : C | Difficulté : Moyen</small></p>
     <a href="{{ site.baseurl }}/projects/ft-printf" class="btn btn-primary">Voir plus</a>
@@ -46,8 +49,9 @@ Découvrez tous mes projets réalisés durant mon cursus à **42 Paris**. Chaque
 
 <div class="card-container">
   <div class="project-card">
-    <span class="badge badge-success">120/100</span>
+    <!-- <span class="badge badge-success">120/100</span> -->
     <h3>🎨 FdF</h3>
+    <img src="https://img.shields.io/badge/Score-120%2F100-success" alt="Score"/>
     <p>Wireframe 3D avec projection isométrique</p>
     <p><small>Langages : C | Difficulté : Moyen</small></p>
     <a href="{{ site.baseurl }}/projects/fdf" class="btn btn-primary">Voir plus</a>
@@ -60,8 +64,9 @@ Découvrez tous mes projets réalisés durant mon cursus à **42 Paris**. Chaque
 
 <div class="card-container">
   <div class="project-card">
-    <span class="badge badge-success">104/100</span>
+    <!-- <span class="badge badge-success">104/100</span> -->
     <h3>📊 Push Swap</h3>
+   <img src="https://img.shields.io/badge/Score-104%2F100-success" alt="Score"/>
     <p>Algorithme de tri optimisé avec deux piles</p>
     <p><small>Langages : C | Difficulté : Difficile</small></p>
     <a href="{{ site.baseurl }}/projects/push-swap" class="btn btn-primary">Voir plus</a>
@@ -75,15 +80,17 @@ Découvrez tous mes projets réalisés durant mon cursus à **42 Paris**. Chaque
 <div class="card-container">
   <div class="project-card">
     <h3>📡 Minitalk</h3>
-    <span class="badge badge-success">125/100</span>
+    <img src="https://img.shields.io/badge/Score-125%2F100-success" alt="Score"/>
+    <!-- <span class="badge badge-success">125/100</span> -->
     <p>Communication client-serveur avec signaux Unix</p>
     <p><small>Langages : C | Difficulté : Moyen</small></p>
     <a href="{{ site.baseurl }}/projects/minitalk" class="btn btn-primary">Voir plus</a>
   </div>
 
   <div class="project-card">
-    <span class="badge badge-success">125/100</span>
+    <!-- <span class="badge badge-success">125/100</span> -->
     <h3>🖥️ Born2beroot</h3>
+    <img src="https://img.shields.io/badge/Score-125%2F100-success" alt="Score"/>
     <p>Administration système et virtualisation</p>
     <p><small>Type : SysAdmin | Difficulté : Moyen</small></p>
     <a href="{{ site.baseurl }}/projects/born2beroot" class="btn btn-primary">Voir plus</a>
