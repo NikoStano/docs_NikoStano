@@ -8,7 +8,7 @@ icon: "book"
 
 # 🔷 Libft - Bibliothèque C personnelle
 
-![Score](https://img.shields.io/badge/Score-125%2F100-success)
+![Score](https://img.shields.io/badge/Score-120%2F100-success)
 ![Language](https://img.shields.io/badge/Language-C-blue)
 
 ## Introduction

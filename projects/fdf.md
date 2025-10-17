@@ -8,7 +8,7 @@ icon: "cube"
 
 # 🎨 FdF (Fil de Fer)
 
-![Score](https://img.shields.io/badge/Score-125%2F100-success)
+![Score](https://img.shields.io/badge/Score-120%2F100-success)
 ![Language](https://img.shields.io/badge/Language-C-blue)
 ![Graphics](https://img.shields.io/badge/Graphics-MiniLibX-purple)
 

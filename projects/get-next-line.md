@@ -8,7 +8,7 @@ icon: "file-lines"
 
 # 📄 Get Next Line
 
-![Score](https://img.shields.io/badge/Score-125%2F100-success)
+![Score](https://img.shields.io/badge/Score-112%2F100-success)
 ![Language](https://img.shields.io/badge/Language-C-blue)
 ![Difficulty](https://img.shields.io/badge/Difficulty-Medium-orange)
 
