@@ -12,7 +12,7 @@ icon: "user"
 Je suis **Nikola** (nistanoj), un développeur junior en pleine formation à **42 Paris**. Mon parcours est axé sur l'apprentissage par la pratique, la résolution de problèmes complexes et la collaboration.
 
 {: .note }
-> 
+>
 J'ai une soif insatiable de connaissances et je suis constamment à la recherche de nouveaux défis pour affiner mes compétences.
 
 
@@ -27,17 +27,17 @@ J'ai une soif insatiable de connaissances et je suis constamment à la recherche
   <h4>Fondamentaux du C</h4>
   <p>Maîtrise approfondie du langage C, gestion de la mémoire, pointeurs et structures de données.</p>
 </div>
-  
+
   <div class="step">
   <h4>Algorithmie</h4>
   <p>Conception et optimisation d'algorithmes complexes, analyse de complexité temporelle et spatiale.</p>
 </div>
-  
+
   <div class="step">
   <h4>Programmation système</h4>
   <p>Compréhension des systèmes Unix/Linux, signaux, processus, pipes et gestion des fichiers.</p>
 </div>
-  
+
   <div class="step">
   <h4>Graphique et mathématiques</h4>
   <p>Transformations matricielles, projections 3D et utilisation de bibliothèques graphiques.</p>
@@ -78,42 +78,44 @@ J'ai une soif insatiable de connaissances et je suis constamment à la recherche
 ### Outils et environnement
 
 <div class="tabs-container">
-<div class="tab-buttons">
-  <div id="développement" class="tab-content">
-- **IDE/Éditeurs** : Vim, VSCode
-    - **Debuggers** : GDB, LLDB
-    - **Analyse mémoire** : Valgrind, FSanitize
-    - **Build tools** : Make, CMake
-</div>
-  
-  <div id="versioning" class="tab-content">
-- **Git** : Gestion de versions
-    - **GitHub** : Collaboration et portfolio
-    - **Workflow** : Branches, commits, pull requests
-</div>
-  
-  <div id="systèmes" class="tab-content">
-- **Linux** : Debian, Ubuntu, Rocky
-    - **Virtualisation** : VirtualBox, VMware
-    - **Administration** : Configuration serveurs, sécurité
-</div>
-</div>
+  <div class="tab-buttons">
+    <div id="développement" class="tab-content">
+  - **IDE/Éditeurs** : Vim, VSCode
+      - **Debuggers** : GDB, LLDB
+      - **Analyse mémoire** : Valgrind, FSanitize
+      - **Build tools** : Make, CMake
+  </div>
+
+  <div class="tab-buttons">
+    <div id="versioning" class="tab-content">
+  - **Git** : Gestion de versions
+      - **GitHub** : Collaboration et portfolio
+      - **Workflow** : Branches, commits, pull requests
+    </div>
+
+  <div class="tab-buttons">
+    <div id="systèmes" class="tab-content">
+  - **Linux** : Debian, Ubuntu, Rocky
+      - **Virtualisation** : VirtualBox, VMware
+      - **Administration** : Configuration serveurs, sécurité
+    </div>
+  </div>
 </div>
 
 ## Ma philosophie de travail
 
 {: .tip }
-> 
+>
 **Rigoureux et méthodique** : Je privilégie la compréhension en profondeur plutôt que la mémorisation superficielle.
 
 
 {: .tip }
-> 
+>
 **Curieux et ouvert** : J'explore constamment de nouvelles technologies et méthodologies pour enrichir mes connaissances.
 
 
 {: .tip }
-> 
+>
 **Collaboratif** : Je crois fermement au partage de connaissances et à l'apprentissage collectif.
 
 
@@ -146,5 +148,5 @@ Vous souhaitez discuter de projets, d'opportunités ou simplement échanger sur 
 ---
 
 {: .check }
-> 
+>
 Cette documentation est en constante évolution, au fur et à mesure de ma progression à 42 Paris.

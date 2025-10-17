@@ -16,7 +16,7 @@ Découvrez tous mes projets réalisés durant mon cursus à **42 Paris**. Chaque
 
 <div class="card-container">
   <div class="project-card">
-    <span class="badge badge-success">125/100</span>
+    <span class="badge badge-success">120/100</span>
     <h3>🔷 Libft</h3>
     <p>Ma bibliothèque C personnelle - Premier projet du cursus</p>
     <p><small>Langages : C | Difficulté : Facile</small></p>
@@ -24,7 +24,7 @@ Découvrez tous mes projets réalisés durant mon cursus à **42 Paris**. Chaque
   </div>
 
   <div class="project-card">
-    <span class="badge badge-success">125/100</span>
+    <span class="badge badge-success">112/100</span>
     <h3>📄 Get Next Line</h3>
     <p>Fonction de lecture ligne par ligne</p>
     <p><small>Langages : C | Difficulté : Moyen</small></p>
@@ -46,7 +46,7 @@ Découvrez tous mes projets réalisés durant mon cursus à **42 Paris**. Chaque
 
 <div class="card-container">
   <div class="project-card">
-    <span class="badge badge-success">125/100</span>
+    <span class="badge badge-success">120/100</span>
     <h3>🎨 FdF</h3>
     <p>Wireframe 3D avec projection isométrique</p>
     <p><small>Langages : C | Difficulté : Moyen</small></p>
@@ -60,7 +60,7 @@ Découvrez tous mes projets réalisés durant mon cursus à **42 Paris**. Chaque
 
 <div class="card-container">
   <div class="project-card">
-    <span class="badge badge-success">125/100</span>
+    <span class="badge badge-success">104/100</span>
     <h3>📊 Push Swap</h3>
     <p>Algorithme de tri optimisé avec deux piles</p>
     <p><small>Langages : C | Difficulté : Difficile</small></p>
@@ -96,11 +96,11 @@ Découvrez tous mes projets réalisés durant mon cursus à **42 Paris**. Chaque
 
 | Catégorie | Nombre de projets | Score moyen |
 |-----------|-------------------|-------------|
-| Fondamentaux | 3 | 116/100 |
-| Graphiques | 1 | 125/100 |
-| Algorithmiques | 1 | 125/100 |
+| Fondamentaux | 3 | 111/100 |
+| Graphiques | 1 | 120/100 |
+| Algorithmiques | 1 | 104/100 |
 | Système | 2 | 125/100 |
-| **Total** | **7** | **122/100** |
+| **Total** | **7** | **115/100** |
 
 ---
 
