@@ -127,32 +127,26 @@ Les fonctions bonus permettent de manipuler des listes chaînées, une structure
 
 ## Installation et compilation
 
-<div class="tabs-container">
-  <div class="tab-buttons"></div>
-  <div id="clone" class="tab-content">
+### Clone
 
-  ```bash
-  git clone https://github.com/NikoStano/libft.git
-  cd libft
-  ```
-  </div>
-  <div id="compilation" class="tab-content">
+```bash
+git clone https://github.com/NikoStano/libft.git
+cd libft
+```
+### Compilation
 
-  ```bash
-  # Compilation standard
-  make
+```bash
+# Compilation standard
+make
 
-  # Avec les bonus
-  make bonus
+# Avec les bonus
+make bonus
 
-  # Nettoyage
-  make clean  # Supprime les .o
-  make fclean # Supprime tout
-  make re     # Recompile tout
-  ```
-  </div>
-</div>
-</div>
+# Nettoyage
+make clean  # Supprime les .o
+make fclean # Supprime tout
+make re     # Recompile tout
+```
 
 ## Exemples d'utilisation
 
