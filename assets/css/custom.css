@@ -89,7 +89,7 @@
   border-radius: 12px;
   padding: 1.5rem;
   transition: all 0.3s ease;
-  background: white;
+  background: rgb(68, 68, 68);
   position: relative;
 }
 
