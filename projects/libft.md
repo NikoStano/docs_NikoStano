@@ -130,13 +130,15 @@ Les fonctions bonus permettent de manipuler des listes chaînées, une structure
 <div class="tabs-container">
   <div class="tab-buttons"></div>
   <div id="clone" class="tab-content">
-```bash
+
+    ```bash
     git clone https://github.com/NikoStano/libft.git
     cd libft
     ```
   </div>
   <div id="compilation" class="tab-content">
-```bash
+
+    ```bash
     # Compilation standard
     make
 
@@ -217,15 +219,14 @@ int main(void)
 ## Points techniques importants
 
 <details>
-<summary>Gestion de la mémoire</summary>
+<summary>**Gestion de la mémoire**</summary>
 
-- Toujours vérifier les retours de `malloc`
-    - Libérer toute mémoire allouée
-    - Utiliser Valgrind pour détecter les fuites
-
-    ```bash
+  - Toujours vérifier les retours de `malloc`
+  - Libérer toute mémoire allouée
+  - Utiliser Valgrind pour détecter les fuites
+  ```bash
     valgrind --leak-check=full ./program
-    ```
+  ```
 </details>
 
   <details>
@@ -233,26 +234,26 @@ int main(void)
 
 Toutes les fonctions doivent gérer les pointeurs NULL
 
-    ```c
+  ```c
     char *ft_strdup(const char *s)
     {
         if (!s)
             return (NULL);
         // ... reste du code
     }
-    ```
+  ```
 </details>
 
   <details>
 <summary>Norme 42</summary>
 
-- Maximum 25 lignes par fonction
-    - Maximum 5 fonctions par fichier
-    - Respect strict de la Norminette
+  - Maximum 25 lignes par fonction
+  - Maximum 5 fonctions par fichier
+  - Respect strict de la Norminette
 
-    ```bash
+  ```bash
     norminette *.c *.h
-    ```
+  ```
 </details>
 
 ## Conseils et astuces
@@ -275,10 +276,10 @@ Toutes les fonctions doivent gérer les pointeurs NULL
   <div class="project-card">
   <h3>man pages</h3>
   <p>Consultez les pages man des fonctions originales
-    ```bash
+  ```bash
     man strlen
     man malloc
-    ```</p>
+  ```</p>
 </div>
 
   <div class="project-card">
