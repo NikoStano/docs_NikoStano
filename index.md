@@ -106,7 +106,7 @@ Pour toute question ou collaboration :
 
 ---
 
-<!-- <style>
+<style>
 .centered-image {
   display: block;
   margin: 2rem auto;
@@ -157,4 +157,4 @@ Pour toute question ou collaboration :
 .btn-external::after {
   content: " ↗";
 }
-</style> -->
+</style>
