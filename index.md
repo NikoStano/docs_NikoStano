@@ -125,7 +125,7 @@ Pour toute question ou collaboration :
   padding: 1.5rem;
   border: 1px solid var(--border-color, #e1e4e8);
   border-radius: 8px;
-  background: var(--card-bg, #f6f8fa);
+  background: var(--card-bg,rgb(59, 60, 62));
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
